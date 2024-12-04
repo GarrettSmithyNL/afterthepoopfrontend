@@ -1,21 +1,23 @@
+import {Link} from "react-router-dom";
+
 const NavBar = () => {
     return (
         <nav className={"navBar"}>
-            <a href={"/"}>
+            <Link to={"/"}>
                 <button className={"navButton"}>home</button>
-            </a>
-            <a href={"/about"}>
+            </Link>
+            <Link to={"/about"}>
                 <button className={"navButton"}>About</button>
-            </a>
-            <a href={"/sell"}>
+            </Link>
+            <Link to={"/sell"}>
                 <button className={"navButton"}>Sell Fertilizer</button>
-            </a>
-            <a href={"/fertilizer"}>
+            </Link>
+            <Link to={"/fertilizer"}>
                 <button className={"navButton"}>Buy Fertilizer</button>
-            </a>
-            <a href={"/user"}>
+            </Link>
+            <Link to={"/user"}>
                 <button className={"navButton"}>Profile</button>
-            </a>
+            </Link>
         </nav>
     );
 }

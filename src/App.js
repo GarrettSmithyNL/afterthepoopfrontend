@@ -1,46 +1,25 @@
 
 import './App.css';
-import {Routes, Route, Router} from "react-router-dom";
-import {useEffect, useState, useCallback} from "react";
+import {Routes, Route, BrowserRouter as Router} from "react-router-dom";
 import {createBrowserHistory} from 'history';
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Sell from "./pages/Sell";
+import Buy from "./pages/Buy";
+import UserProfile from "./pages/UserProfile";
 
 const history = createBrowserHistory();
 
 function App() {
   return (
-    <Router location={window.location} navigator={history}>
+    <Router history={history}>
         <div className={"App"}>
             <Routes>
-                <Route
-                    path={"/"}
-                    element={
-                        <p>This is Home</p>
-                    }
-                />
-                <Route
-                    path={"/about"}
-                    element={
-                        <p>This is about</p>
-                    }
-                />
-                <Route
-                    path={"/sell"}
-                    element={
-                        <p>This is sell</p>
-                    }
-                />
-                <Route
-                    path={"/fertilizer"}
-                    element={
-                        <p>This is fertilizer</p>
-                    }
-                />
-                <Route
-                    path={"/user"}
-                    element={
-                        <p>This is user</p>
-                    }
-                />
+                <Route path={"/"} element={ <Home /> } />
+                <Route path={"/about"} element={ <About /> } />
+                <Route path={"/sell"} element={ <Sell /> } />
+                <Route path={"/fertilizer"} element={ <Buy /> } />
+                <Route path={"/user"} element={ <UserProfile /> } />
             </Routes>
         </div>
     </Router>
