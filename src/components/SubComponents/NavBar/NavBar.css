@@ -1,0 +1,8 @@
+.navBar {
+    width: 800px;
+    border: 2px solid lawngreen;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}

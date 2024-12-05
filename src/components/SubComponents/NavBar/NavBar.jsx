@@ -1,8 +1,10 @@
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
+import './NavBar.css';
+
 
 const NavBar = () => {
     return (
-        <nav className={"navBar"}>
+        <div className={"navBar"}>
             <Link to={"/"}>
                 <button className={"navButton"}>home</button>
             </Link>
@@ -18,7 +20,7 @@ const NavBar = () => {
             <Link to={"/user"}>
                 <button className={"navButton"}>Profile</button>
             </Link>
-        </nav>
+        </div>
     );
 }
 
