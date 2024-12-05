@@ -1,0 +1,17 @@
+.buyPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.buyBody {
+    display: flex;
+    flex-direction: column;
+}
+.buyTable {
+    width: 650px;
+    border: 2px solid black;
+}
+tr {
+    padding-top: 10px;
+}

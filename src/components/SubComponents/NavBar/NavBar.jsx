@@ -14,7 +14,7 @@ const NavBar = () => {
             <Link to={"/sell"}>
                 <button className={"navButton"}>Sell Fertilizer</button>
             </Link>
-            <Link to={"/fertilizer"}>
+            <Link to={"/buy"}>
                 <button className={"navButton"}>Buy Fertilizer</button>
             </Link>
             <Link to={"/user"}>
