@@ -4,15 +4,6 @@
     align-items: center;
 }
 
-.homeHeader {
-    margin-bottom: 20px;
-    width: 800px;
-    height: 100px;
-    text-align: center;
-    border: 2px solid #61dafb;
-
-}
-
 .homeBody {
     margin-top: 20px;
     display: flex;
@@ -24,13 +15,15 @@
 
 .homeInfoBox {
     width: 375px;
+    height: 400px;
     text-align: center;
     border: 2px solid saddlebrown;
-    padding: 10px;
+
 }
 
 .loginBox {
     width: 375px;
+    height: 400px;
     text-align: center;
     border: 2px solid saddlebrown;
 }

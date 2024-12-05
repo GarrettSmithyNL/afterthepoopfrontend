@@ -1,12 +1,12 @@
 import NavBar from "../../SubComponents/NavBar/NavBar";
 import './Home.css'
+import Header from "../../SubComponents/Header/Header";
+import LoginPanel from "../../SubComponents/LoginPanel/LoginPanel";
 
 const Home = () => {
     return(
         <div className={"homePage"}>
-            <header className={'homeHeader'}>
-                <p>This is a header</p>
-            </header>
+            <Header />
             <NavBar />
             <div className={'homeBody'}>
                 <div className={'homeInfoBox'}>
@@ -27,7 +27,7 @@ const Home = () => {
                     </p>
                 </div>
                 <div className={'loginBox'}>
-                    <p>This will be a log in box.</p>
+                    <LoginPanel />
                 </div>
             </div>
         </div>
