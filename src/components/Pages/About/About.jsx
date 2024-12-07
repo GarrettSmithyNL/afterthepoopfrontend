@@ -7,7 +7,9 @@ export const About = () => {
         <div className={"aboutPage"}>
             <Header />
             <NavBar />
-            <p>This is the about page.</p>
+            <div className={'aboutBody'}>
+                This is the about page
+            </div>
         </div>
     )
 }

@@ -9,18 +9,15 @@ import {UserReset} from "../../SubComponents/UserReset/UserReset";
 
 export const UserProfile = () => {
     return (
-
-            <div className={"userProfilePage"}>
-                <Header />
-                <NavBar />
-                <Routes>
-                    <Route path={'/'} element={ <UserMain /> } />
-                    <Route path={'/reset'} element={ <UserReset /> } />
-                    <Route path={'/transactions'} element={<UserTransaction />} />
-                    <Route path={'/delete'} element={ <UserDelete /> } />
-                </Routes>
-
-            </div>
-
+        <div className={"userProfilePage"}>
+            <Header />
+            <NavBar />
+            <Routes>
+                <Route path={'/'} element={ <UserMain /> } />
+                <Route path={'/reset'} element={ <UserReset /> } />
+                <Route path={'/transactions'} element={<UserTransaction />} />
+                <Route path={'/delete'} element={ <UserDelete /> } />
+            </Routes>
+        </div>
     );
 }
