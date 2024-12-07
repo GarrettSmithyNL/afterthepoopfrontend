@@ -1,9 +1,9 @@
-import NavBar from "../../SubComponents/NavBar/NavBar";
 import './Home.css'
-import Header from "../../SubComponents/Header/Header";
-import LoginPanel from "../../SubComponents/LoginPanel/LoginPanel";
+import {NavBar} from "../../SubComponents/NavBar/NavBar";
+import {Header} from "../../SubComponents/Header/Header";
+import {LoginPanel} from "../../SubComponents/LoginPanel/LoginPanel";
 
-const Home = () => {
+export const Home = () => {
     return(
         <div className={"homePage"}>
             <Header />
@@ -33,5 +33,3 @@ const Home = () => {
         </div>
     );
 }
-
-export default Home;

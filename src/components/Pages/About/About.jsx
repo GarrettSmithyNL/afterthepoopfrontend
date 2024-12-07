@@ -1,7 +1,8 @@
-import NavBar from "../../SubComponents/NavBar/NavBar";
-import Header from "../../SubComponents/Header/Header";
+import './About.css'
+import {NavBar} from "../../SubComponents/NavBar/NavBar";
+import {Header} from "../../SubComponents/Header/Header";
 
-const About = () => {
+export const About = () => {
     return (
         <div className={"aboutPage"}>
             <Header />
@@ -10,5 +11,3 @@ const About = () => {
         </div>
     )
 }
-
-export default About;

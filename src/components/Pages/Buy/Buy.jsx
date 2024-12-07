@@ -1,13 +1,14 @@
-import NavBar from "../../SubComponents/NavBar/NavBar";
-import Header from "../../SubComponents/Header/Header";
 import './Buy.css'
+import {NavBar} from "../../SubComponents/NavBar/NavBar";
+import {Header} from "../../SubComponents/Header/Header";
 
 // Need to add Filters.
 // Need to add ability to buy an item.
 
-const Buy = () => {
+export const Buy = () => {
 
-    const numOfRows = 8;
+    const numOfRows = 12
+    ;
 
     return (
         <div className={"buyPage"}>
@@ -50,4 +51,3 @@ const Buy = () => {
     )
 }
 
-export default Buy;

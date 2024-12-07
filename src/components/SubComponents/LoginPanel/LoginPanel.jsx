@@ -1,6 +1,6 @@
 import './LoginPanel.css'
 
-const LoginPanel = () => {
+export const LoginPanel = () => {
     return (
       <div className={'loginPanel'}>
           <h3>Login</h3>
@@ -14,5 +14,3 @@ const LoginPanel = () => {
       </div>
     );
 }
-
-export default LoginPanel;

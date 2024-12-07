@@ -1,6 +1,6 @@
 import './SellPanel.css'
 
-const SellPanel = () => {
+export const SellPanel = () => {
     return (
         <div className={'sellPanel'}>
             <h3>Sell Fertilizer</h3>
@@ -30,5 +30,3 @@ const SellPanel = () => {
         </div>
     );
 }
-
-export default SellPanel;

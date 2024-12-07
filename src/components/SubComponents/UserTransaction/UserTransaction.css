@@ -1,0 +1,15 @@
+.transactionPanel {
+    width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid black;
+}
+
+.transactionTable {
+    width: 100%;
+}
+
+th {
+    border: 1px solid green;
+}
