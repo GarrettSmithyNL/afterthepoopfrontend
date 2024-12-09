@@ -43,7 +43,7 @@ export const Buy = () => {
             }
         });
 
-        getPostings();
+        await getPostings();
 
         if (res.ok) {
             console.log(res.body);
