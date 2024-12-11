@@ -22,7 +22,7 @@ export const SellPanel = () => {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-        const updatedPosting = {...posting, products: [product]};
+        const updatedPosting = {...posting, product};
         console.log(URL + userName);
         console.log(updatedPosting);
 

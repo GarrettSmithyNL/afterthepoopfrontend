@@ -11,6 +11,7 @@ export const Buy = () => {
 
     useEffect(() => {
         getPostings();
+        console.log(postings);
     }, [])
 
     const getPostings = async () => {
@@ -34,7 +35,7 @@ export const Buy = () => {
         const URL = 'http://localhost:8080/buy?postingId=' + postingId
             + '&sellerId=' + sellerId
             + '&buyerId=' + buyerId
-            + '&quantity=' + quantity;
+            + '&quantity=' + 50;
 
         const res = await fetch(URL, {
             method: 'POST',
@@ -66,7 +67,8 @@ export const Buy = () => {
                     <thead>
                     <tr>
                         <th className={'nameColumn'}>Name</th>
-                        <th className={'companyColumn'}>Company</th>
+                        <th className={'descriptionColumn'}>Description</th>
+                        <th className={'companyColumn'}>Seller</th>
                         <th className={'pColumn'}>P%</th>
                         <th className={'nColumn'}>N%</th>
                         <th className={'kColumn'}>K%</th>
@@ -78,11 +80,12 @@ export const Buy = () => {
                     <tbody>
                         {postings.map((posting, index) => (
                             <tr key={index}>
-                                <td>{posting['products'][0]['productName']}</td>
+                                <td>{posting['product']['productName']}</td>
+                                <td>{posting['product']['description']}</td>
                                 <td>{posting['sellerId']}</td>
-                                <td>{posting['products'][0]['ppercent']}</td>
-                                <td>{posting['products'][0]['npercent']}</td>
-                                <td>{posting['products'][0]['kpercent']}</td>
+                                <td>{posting['product']['ppercent']}</td>
+                                <td>{posting['product']['npercent']}</td>
+                                <td>{posting['product']['kpercent']}</td>
                                 <td>{posting['quantity']}</td>
                                 <td>{posting["price"]}</td>
                                 <td>

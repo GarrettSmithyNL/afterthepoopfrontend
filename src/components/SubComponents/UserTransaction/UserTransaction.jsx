@@ -49,7 +49,7 @@ export const UserTransaction = () => {
                             <td>{transaction['sellerId']}</td>
                             <td>{transaction['buyerId']}</td>
                             <td>{transaction['transactionDate']}</td>
-                            <td>{transaction['posting']['products'][0]['productName']}</td>
+                            <td>{transaction['posting']['product']['productName']}</td>
                             <td>{transaction['posting']['price']}</td>
                             <td>{transaction['quantityPurchased']}</td>
                             <td>{transaction['transactionAmount']}</td>
