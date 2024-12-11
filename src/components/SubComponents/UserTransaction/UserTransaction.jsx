@@ -1,8 +1,24 @@
 import './UserTransaction.css'
 import {Link} from "react-router-dom";
+import {useEffect, useState} from "react";
 
 export const UserTransaction = () => {
-    const numOfRows = 10;
+    const [transactions, setTransactions] = useState([]);
+
+    useEffect(() => {
+        getTransactions();
+        console.log(transactions);
+    }, [])
+
+    const getTransactions = async () => {
+        const trasactionsFromServer = await fetchTransactions();
+        setTransactions(trasactionsFromServer);
+    }
+
+    const fetchTransactions = async () => {
+        const res = await fetch("http://localhost:8080/buy");
+        return await res.json();
+    }
 
     return (
         <div className="transactionPanel">
@@ -27,18 +43,18 @@ export const UserTransaction = () => {
                 </tr>
                 </thead>
                 <tbody>
-                {Array.from({length: numOfRows}).map((_, index) => (
-                    <tr key={index}>
-                        <td>{index}</td>
-                        <td>Buyer</td>
-                        <td>Seller</td>
-                        <td>01/01/2022</td>
-                        <td>Fertilizer Name</td>
-                        <td>100</td>
-                        <td>8.99</td>
-                        <td>899.00</td>
-                    </tr>
-                ))}
+                    {transactions.map((transaction, index) => (
+                        <tr key={index}>
+                            <td>{transaction['transactionId']}</td>
+                            <td>{transaction['sellerId']}</td>
+                            <td>{transaction['buyerId']}</td>
+                            <td>{transaction['transactionDate']}</td>
+                            <td>{transaction['posting']['products'][0]['productName']}</td>
+                            <td>{transaction['posting']['price']}</td>
+                            <td>{transaction['quantityPurchased']}</td>
+                            <td>{transaction['transactionAmount']}</td>
+                        </tr>
+                    ))}
                 </tbody>
             </table>
         </div>
