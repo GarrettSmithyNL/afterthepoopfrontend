@@ -8,22 +8,47 @@
     margin-top: 20px;
     display: flex;
     flex-direction: row;
-    width: 800px;
+    width: 1000px;
+    height: 500px;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
+    text-align: center;
 }
 
 .homeInfoBox {
-    width: 375px;
-    height: 400px;
-    text-align: center;
-    border: 2px solid saddlebrown;
+    width: 450px;
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
+.homeBackground {
+    width: 450px;
+    height: 450px;
+}
+
+.homeInfoText {
+    width: 375px;
+    height: 450px;
+    padding-top: 30px;
+    font-size: 90%;
 }
 
 .loginBox {
+    width: 450px;
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.loginPanel {
     width: 375px;
-    height: 400px;
-    text-align: center;
-    border: 2px solid saddlebrown;
+    height: 450px;
+    padding-top: 30px;
+}
+
+.homeHeader {
+    color: black;
 }

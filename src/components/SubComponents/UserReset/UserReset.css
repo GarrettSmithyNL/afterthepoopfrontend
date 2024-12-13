@@ -1,17 +1,59 @@
 .resetPanel {
-    width: 800px;
+    margin-top: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 1000px;
+    height: 500px;
 }
 
 .resetForm {
-    width: 70%;
     height: 200px;
-    border: 2px solid black;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
+    align-self: center;
+    justify-self: center;
+}
+
+.backgroundPic {
+    position: relative;
+    width: 900px;
+    height: 400px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.resetButton {
+    width: 300px;
+    background-color: #3B3C1B;
+    border: 2px solid #ADD010;
+    color: #ADD010;
+    border-radius: 32px;
+    font-family: "Finger Paint", serif;
+    font-size: 90%;
+    margin-top: 20px;
+}
+
+.resetButton:hover {
+    cursor: pointer;
+}
+
+#resetPasswordLabel,
+#resetRePasswordLabel {
+    margin: 0;
+    font-size: large;
+}
+
+#resetPasswordInput,
+#resetRePasswordInput {
+    width: 120%;
+    height: 20px;
+    text-align: center;
+    border-radius: 8px;
+
 }
 

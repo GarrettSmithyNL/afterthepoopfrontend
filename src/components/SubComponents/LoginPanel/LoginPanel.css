@@ -6,6 +6,28 @@
     align-items: center;
 }
 
+label {
+    margin-top: 20px;
+}
+
 .loginText {
-    width: 75%;
+    width: 300px;
+    height: 30px;
+    border-radius: 32px;
+    border: 2px solid #3B3C1B;
+}
+
+.submitButton {
+    margin-top: 40px;
+    width: 300px;
+    background-color: #3B3C1B;
+    border: 2px solid #ADD010;
+    color: #ADD010;
+    border-radius: 32px;
+    font-family: "Finger Paint", serif;
+    font-size: 120%;
+}
+
+.loginHeader {
+    color: black;
 }

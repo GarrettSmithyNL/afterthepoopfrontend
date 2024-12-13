@@ -9,9 +9,14 @@ export const Sell = () => {
         <div className={"sellPage"}>
             <Header />
             <NavBar />
-            <div className={'sellBody'}>
+            <div
+                className={'sellBody'}
+                style={{
+                    backgroundImage: `url(/images/backpanel.svg)`,
+                    backgroundSize: '1000px'
+                }}
+            >
                 <SellPanel />
-
             </div>
         </div>
     )

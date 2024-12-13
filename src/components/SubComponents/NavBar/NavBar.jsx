@@ -1,25 +1,30 @@
 import './NavBar.css';
 import {Link} from "react-router-dom";
-
+import {ReactComponent as ButtonBackground} from "../../../assets/button.svg";
 
 
 export const NavBar = () => {
     return (
         <div className={"navBar"}>
-            <Link to={"/"}>
-                <button className={"navButton"}>home</button>
+            <Link to={"/"} className={'navButton'}>
+                <ButtonBackground className={'buttonBackground'}/>
+                <span className={'buttonText'}>Home</span>
             </Link>
-            <Link to={"/about"}>
-                <button className={"navButton"}>About</button>
+            <Link to={"/about"} className={'navButton'}>
+                <ButtonBackground className={'buttonBackground'}/>
+                <span className={'buttonText'}>About</span>
             </Link>
-            <Link to={"/sell"}>
-                <button className={"navButton"}>Sell Fertilizer</button>
+            <Link to={"/sell"} className={'navButton'}>
+                <ButtonBackground className={'buttonBackground'}/>
+                <span className={'buttonText'}>Sell Fertilizer</span>
             </Link>
-            <Link to={"/buy"}>
-                <button className={"navButton"}>Buy Fertilizer</button>
+            <Link to={"/buy"} className={'navButton'}>
+                <ButtonBackground className={'buttonBackground'}/>
+                <span className={'buttonText'}>Buy Fertilizer</span>
             </Link>
-            <Link to={"/user"}>
-                <button className={"navButton"}>Profile</button>
+            <Link to={"/user"} className={'navButton'}>
+                <ButtonBackground className={'buttonBackground'}/>
+                <span className={'buttonText'}>Profile</span>
             </Link>
         </div>
     );

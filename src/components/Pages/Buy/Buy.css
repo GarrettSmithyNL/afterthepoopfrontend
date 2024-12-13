@@ -5,13 +5,146 @@
 }
 
 .buyBody {
+    margin-top: 20px;
     display: flex;
     flex-direction: column;
+    width: 1000px;
+    height: 500px;
+    align-items: center;
 }
+
+.backgroundPic {
+    width: 900px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
 .buyTable {
-    width: 650px;
-    border: 2px solid black;
+    margin-top: 15px;
+    width: 800px;
+    height: 400px;
+    text-align: center;
+    justify-content: center;
+    border-spacing: 0;
+    table-layout: fixed;
+
 }
-tr {
-    padding-top: 10px;
+
+.buyTable thead tr {
+    display: block;
+}
+
+.buyTable th, td {
+    border-bottom: 1px solid black;
+    padding: 1px;
+    border-collapse: separate;
+}
+
+.buyTable tbody {
+    display: block;
+    width: 100%;
+    overflow: auto;
+    height: 345px;
+}
+
+.buyTable thead {
+
+}
+
+.buyTable tbody.scrollable{
+    width: 3px;
+}
+
+.nameColumn{
+    padding-top: 3px;
+    padding-bottom: 3px;
+    width: 175px;
+}
+
+.companyColumn{
+    padding-top: 3px;
+    padding-bottom: 3px;
+    width: 175px;
+}
+
+.pColumn {
+    padding-top: 3px;
+    padding-bottom: 3px;
+    width: 50px;
+}
+
+.nColumn {
+    padding-top: 3px;
+    padding-bottom: 3px;
+    width: 50px;
+}
+
+.kColumn {
+    padding-top: 3px;
+    padding-bottom: 3px;
+    width: 50px;
+}
+
+.quantityColumn {
+    padding-top: 3px;
+    padding-bottom: 3px;
+    width: 75px;
+}
+
+.priceColumn{
+    padding-top: 3px;
+    padding-bottom: 3px;
+    width: 75px;
+}
+
+.buyColumn{
+    padding-top: 3px;
+    padding-bottom: 3px;
+    width: 125px;
+}
+
+.buyColumn td {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+.buyButton {
+    width: 50px;
+    background-color: #3B3C1B;
+    border: 2px solid #ADD010;
+    color: #ADD010;
+    border-radius: 32px;
+    font-family: "Finger Paint", serif;
+    font-size: 90%;
+}
+
+.buyButton:hover {
+    cursor: pointer;
+}
+
+.buyTable tbody::-webkit-scrollbar {
+    width: 5px;
+}
+
+.buyTable tbody::-webkit-scrollbar-track {
+    background: #CFCEBC;
+}
+
+.buyTable tbody::-webkit-scrollbar-thumb {
+    background: #3B3C1B;
+    border-radius: 8px;
+}
+
+.buyTable tbody tr:hover {
+    background-color: #BBB896;
+}
+
+.buyInput {
+    width: 50px;
 }

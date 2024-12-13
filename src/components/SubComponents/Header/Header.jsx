@@ -1,9 +1,10 @@
 import "./Header.css"
+import {ReactComponent as HeaderLogo} from '../../../assets/header.svg';
 
 export const Header = () => {
     return (
         <div className={"header"}>
-            <p>This is the header.</p>
+            <HeaderLogo className={'headerPic'}/>
         </div>
     );
 }

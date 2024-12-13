@@ -1,15 +1,115 @@
 .transactionPanel {
-    width: 800px;
+    margin-top: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 2px solid black;
+    width: 1000px;
+    height: 500px;
+}
+
+.transactionBackground{
+    position: relative;
+    width: 900px;
+    height: 400px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 }
 
 .transactionTable {
-    width: 100%;
+    margin-top: 110px;
+    width: 800px;
+    height: 400px;
+    text-align: center;
+    justify-content: center;
+    border-spacing: 0;
+    table-layout: fixed;
 }
 
-th {
-    border: 1px solid green;
+.transactionTable thead tr {
+    display: block;
+}
+
+.transactionTable th, td {
+    border-bottom: 1px solid black;
+    padding: 1px;
+    border-collapse: separate;
+}
+
+.transactionTable tbody {
+    display: block;
+    width: 100%;
+    overflow: auto;
+    height: 280px;
+}
+
+.buyTable tbody.scrollable{
+    width: 3px;
+}
+
+
+.transactionTable tbody::-webkit-scrollbar {
+    width: 5px;
+}
+
+.transactionTable tbody::-webkit-scrollbar-track {
+    background: #CFCEBC;
+}
+
+.transactionTable tbody::-webkit-scrollbar-thumb {
+    background: #3B3C1B;
+    border-radius: 8px;
+}
+
+.transactionTable tbody tr:hover {
+    background-color: #BBB896;
+}
+
+.idColumn {
+    padding-top: 3px;
+    padding-bottom: 3px;
+    width: 50px;
+}
+
+.sellerTransColumn {
+    padding-top: 3px;
+    padding-bottom: 3px;
+    width: 125px;
+}
+
+.buyerColumn {
+    padding-top: 3px;
+    padding-bottom: 3px;
+    width: 125px;
+}
+
+.dateColumn {
+    padding-top: 3px;
+    padding-bottom: 3px;
+    width: 75px;
+}
+
+.prodNameColumn {
+    padding-top: 3px;
+    padding-bottom: 3px;
+    width: 175px;
+}
+
+.amountColumn {
+    padding-top: 3px;
+    padding-bottom: 3px;
+    width: 50px;
+}
+
+.priceTransColumn {
+    padding-top: 3px;
+    padding-bottom: 3px;
+    width: 75px;
+}
+
+.totalColumn {
+    padding-top: 3px;
+    padding-bottom: 3px;
+    width: 100px;
 }

@@ -3,7 +3,7 @@ import './LoginPanel.css'
 export const LoginPanel = () => {
     return (
       <div className={'loginPanel'}>
-          <h3>Login</h3>
+          <h2 className={'loginHeader'}>Login</h2>
           <form className={'loginForm'}>
               <label>Email</label>
               <input type={'text'} className={'loginText'} />

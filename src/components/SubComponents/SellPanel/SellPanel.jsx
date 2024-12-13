@@ -35,18 +35,31 @@ export const SellPanel = () => {
         });
 
         if (response.ok) {
-            alert('Posting was made.');
+            setProduct({})
+            setPosting({})
         } else {
             alert('Failed to post.');
+            setProduct({})
+            setPosting({})
         }
     }
 
 
 
     return (
-        <div className={'sellPanel'}>
-            <h3>Sell Fertilizer</h3>
-            <form className={'sellForm'} onSubmit={handleSubmit}>
+        <div
+            className={'sellPanel'}
+        >
+            <h2>Sell Fertilizer</h2>
+            <form
+                className={'sellForm'}
+                onSubmit={handleSubmit}
+                style={{
+                    backgroundImage: `url(/images/largepaper.svg)`,
+                    backgroundSize: '900px',
+                    backgroundRepeat: 'no-repeat'
+                }}
+            >
                 <div className={'inputHolder'}>
                     <label className={'sellLabel'}>Product Name:</label>
                     <input
@@ -63,26 +76,6 @@ export const SellPanel = () => {
                         type={'text'}
                         name={'description'}
                         value={product.description || ''}
-                        onChange={createProduct}
-                        className={'sellText'}
-                    />
-                </div>
-                <div className={'inputHolder'}>
-                    <label className={'sellLabel'}>Potassium %:</label>
-                    <input
-                        type={'text'}
-                        name={'kpercent'}
-                        value={product.kpercent || ''}
-                        onChange={createProduct}
-                        className={'sellText'}
-                    />
-                </div>
-                <div className={'inputHolder'}>
-                    <label className={'sellLabel'}>Phosphorus %:</label>
-                    <input
-                        type={'text'}
-                        name={'ppercent'}
-                        value={product.ppercent || ''}
                         onChange={createProduct}
                         className={'sellText'}
                     />
@@ -108,12 +101,32 @@ export const SellPanel = () => {
                     />
                 </div>
                 <div className={'inputHolder'}>
+                    <label className={'sellLabel'}>Phosphorus %:</label>
+                    <input
+                        type={'text'}
+                        name={'ppercent'}
+                        value={product.ppercent || ''}
+                        onChange={createProduct}
+                        className={'sellText'}
+                    />
+                </div>
+                <div className={'inputHolder'}>
                     <label className={'sellLabel'}>Product Price:</label>
                     <input
                         type={'text'}
                         name={'price'}
                         value={posting.price || ''}
                         onChange={createPosting}
+                        className={'sellText'}
+                    />
+                </div>
+                <div className={'inputHolder'}>
+                    <label className={'sellLabel'}>Potassium %:</label>
+                    <input
+                        type={'text'}
+                        name={'kpercent'}
+                        value={product.kpercent || ''}
+                        onChange={createProduct}
                         className={'sellText'}
                     />
                 </div>

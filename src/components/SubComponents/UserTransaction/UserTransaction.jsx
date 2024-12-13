@@ -21,42 +21,54 @@ export const UserTransaction = () => {
     }
 
     return (
-        <div className="transactionPanel">
-            <Link to={'/user'}>
-                <button>Back</button>
-            </Link>
-            <div className="transactionFilter">
-                <h3>This is the filters for the transactions</h3>
+        <div
+            className="transactionPanel"
+            style={{
+                backgroundImage: `url(/images/backpanel.svg)`,
+                backgroundSize: '1000px'
+            }}
+        >
+            <h2>list of Transactions</h2>
+            <div
+                className="transactionBackground"
+                style={{
+                    backgroundImage: `url(/images/largepaper.svg)`,
+                    backgroundSize: '900px',
+                    backgroundRepeat: 'no-repeat'
+                }}
+            >
+                <Link to={'/user'}>
+                    <button className={'backButton'}>Back</button>
+                </Link>
+                <table className="transactionTable">
+                    <thead>
+                    <tr>
+                        <th className={'idColumn'}>ID</th>
+                        <th className={'sellerTransColumn'}>Seller</th>
+                        <th className={'buyerColumn'}>Buyer</th>
+                        <th className={'dateColumn'}>Date</th>
+                        <th className={'prodNameColumn'}>Product Name</th>
+                        <th className={'amountColumn'}>Amount<br/>(lbs)</th>
+                        <th className={'priceTransColumn'}>Price<br/>($)</th>
+                        <th className={'totalColumn'}>Total<br/>($)</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        {transactions.map((transaction, index) => (
+                            <tr key={index}>
+                                <td className={'idColumn'}>{transaction['transactionId']}</td>
+                                <td className={'sellerTransColumn'}>{transaction['sellerId']}</td>
+                                <td className={'buyerColumn'}>{transaction['buyerId']}</td>
+                                <td className={'dateColumn'}>{transaction['transactionDate']}</td>
+                                <td className={'prodNameColumn'}>{transaction['posting']['product']['productName']}</td>
+                                <td className={'amountColumn'}>{transaction['posting']['price']}</td>
+                                <td className={'priceTransColumn'}>{transaction['quantityPurchased']}</td>
+                                <td className={'totalColumn'}>{transaction['transactionAmount']}</td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
             </div>
-            <h3>List of Transactions</h3>
-            <table className="transactionTable">
-                <thead>
-                <tr>
-                    <th id={'idColumn'}>ID</th>
-                    <th id={'sellerColumn'}>Seller</th>
-                    <th id={'buyerColumn'}>Buyer</th>
-                    <th id={'dateColumn'}>Date</th>
-                    <th id={'prodNameColumn'}>Product Name</th>
-                    <th id={'amountColumn'}>Amount<br/>(lbs)</th>
-                    <th id={'priceColumn'}>Price<br/>($)</th>
-                    <th id={'totalColumn'}>Total<br/>($)</th>
-                </tr>
-                </thead>
-                <tbody>
-                    {transactions.map((transaction, index) => (
-                        <tr key={index}>
-                            <td>{transaction['transactionId']}</td>
-                            <td>{transaction['sellerId']}</td>
-                            <td>{transaction['buyerId']}</td>
-                            <td>{transaction['transactionDate']}</td>
-                            <td>{transaction['posting']['product']['productName']}</td>
-                            <td>{transaction['posting']['price']}</td>
-                            <td>{transaction['quantityPurchased']}</td>
-                            <td>{transaction['transactionAmount']}</td>
-                        </tr>
-                    ))}
-                </tbody>
-            </table>
         </div>
     )
 }

@@ -8,10 +8,10 @@ import { useEffect, useState } from "react";
 
 export const Buy = () => {
     const [postings, setPostings] = useState([]);
+    const [quantities, setQuantities] = useState([]);
 
     useEffect(() => {
         getPostings();
-        console.log(postings);
     }, [])
 
     const getPostings = async () => {
@@ -24,18 +24,23 @@ export const Buy = () => {
         return await res.json();
     }
 
+    const changeQuantity = (index, event) => {
+        const newQuantities = [...quantities];
+        newQuantities[index] = event.target.value;
+        setQuantities(newQuantities);
+    }
+
     const buyProduct = async (index) => {
         let postingToBuy = postings[index];
 
         const postingId = postingToBuy.postingId;
         const sellerId = postingToBuy.sellerId;
         let buyerId = "TestUser1";
-        const quantity = postingToBuy.quantity;
 
         const URL = 'http://localhost:8080/buy?postingId=' + postingId
             + '&sellerId=' + sellerId
             + '&buyerId=' + buyerId
-            + '&quantity=' + 50;
+            + '&quantity=' + quantities[index];
 
         const res = await fetch(URL, {
             method: 'POST',
@@ -59,42 +64,68 @@ export const Buy = () => {
         <div className={"buyPage"}>
             <Header />
             <NavBar />
-            <div className={'buyBody'}>
-                <div className={'buyFilters'}>
-                    <p>This is for the filters</p>
-                </div>
-                <table className={'buyTable'}>
-                    <thead>
-                    <tr>
-                        <th className={'nameColumn'}>Name</th>
-                        <th className={'descriptionColumn'}>Description</th>
-                        <th className={'companyColumn'}>Seller</th>
-                        <th className={'pColumn'}>P%</th>
-                        <th className={'nColumn'}>N%</th>
-                        <th className={'kColumn'}>K%</th>
-                        <th className={'quantityColumn'}>Quantity</th>
-                        <th className={'priceColumn'}>Price $</th>
-                        <th></th>
-                    </tr>
-                    </thead>
-                    <tbody>
+            <div
+                className={'buyBody'}
+                style={{
+                    backgroundImage: `url(/images/backpanel.svg)`,
+                    backgroundSize: '1000px'
+                }}
+            >
+                <h2>Avalible Fertilizer</h2>
+                <div
+                    className="backgroundPic"
+                    style={{
+                        backgroundImage: `url(/images/largepaper.svg)`,
+                        backgroundSize: '900px',
+                        backgroundRepeat: 'no-repeat'
+                    }}
+                >
+
+                    <table className={'buyTable'}>
+                        <thead className={'headerRow'}>
+                        <tr >
+                            <th className={'nameColumn'}>Name</th>
+                            <th className={'companyColumn'}>Seller</th>
+                            <th className={'pColumn'}>P%</th>
+                            <th className={'nColumn'}>N%</th>
+                            <th className={'kColumn'}>K%</th>
+                            <th className={'quantityColumn'}>Quantity</th>
+                            <th className={'priceColumn'}>Price $</th>
+                            <th className={'buyColumn'}>Buy</th>
+                        </tr>
+                        </thead>
+                        <tbody>
                         {postings.map((posting, index) => (
                             <tr key={index}>
-                                <td>{posting['product']['productName']}</td>
-                                <td>{posting['product']['description']}</td>
-                                <td>{posting['sellerId']}</td>
-                                <td>{posting['product']['ppercent']}</td>
-                                <td>{posting['product']['npercent']}</td>
-                                <td>{posting['product']['kpercent']}</td>
-                                <td>{posting['quantity']}</td>
-                                <td>{posting["price"]}</td>
-                                <td>
-                                    <button className={'buyButton'} onClick={() => {buyProduct(index)}}>Buy Now</button>
+                                <td className={'nameColumn'}>{posting['product']['productName']}</td>
+                                <td className={'companyColumn'}>{posting['sellerId']}</td>
+                                <td className={'pColumn'}>{posting['product']['ppercent']}</td>
+                                <td className={'nColumn'}>{posting['product']['npercent']}</td>
+                                <td className={'kColumn'}>{posting['product']['kpercent']}</td>
+                                <td className={'quantityColumn'}>{posting['quantity']}</td>
+                                <td className={'priceColumn'}>{posting["price"]}</td>
+                                <td className={'buyColumn'}>
+                                    <input
+                                        type="number"
+                                        className={'buyInput'}
+                                        min="1"
+                                        max={posting['quantity']}
+                                        value={quantities[index] || ''}
+                                        onChange={(e) => {
+                                            changeQuantity(index, e);
+                                        }}
+                                    />
+                                    <button className={'buyButton'} onClick={() => {
+                                        buyProduct(index);
+                                    }}>
+                                        Buy
+                                    </button>
                                 </td>
                             </tr>
                         ))}
-                    </tbody>
-                </table>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     )

@@ -1,17 +1,60 @@
 .userPanel {
-    width: 800px;
-    height: 300px;
+    margin-top: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 2px solid black;
+    width: 1000px;
+    height: 500px;
+}
+
+.mainBackgroundPic {
+    position: relative;
+    width: 900px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: space-evenly;
 }
 
 .userRow {
-    width: 100%;
+    width: 800px;
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
+}
+
+.balanceButton {
+    width: 150px;
+    background-color: #3B3C1B;
+    border: 2px solid #ADD010;
+    color: #ADD010;
+    border-radius: 32px;
+    font-family: "Finger Paint", serif;
+    font-size: 90%;
+}
+
+.balanceText{
+    height: 20px;
+    margin-right: 10px;
+    border-radius: 8px;
+}
+
+.userButton {
+    width: 300px;
+    background-color: #3B3C1B;
+    border: 2px solid #ADD010;
+    color: #ADD010;
+    border-radius: 32px;
+    font-family: "Finger Paint", serif;
+    font-size: 90%;
+}
+
+.balanceButton:hover {
+    cursor: pointer;
+}
+
+.userButton:hover {
+    cursor: pointer;
 }

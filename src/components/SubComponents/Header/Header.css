@@ -1,7 +1,11 @@
 .header {
-    border: 2px solid lightblue;
-    width: 800px;
-    height: 100px;
+    width: 1000px;
+    height: 188px;
     text-align: center;
     text-justify: auto;
+}
+
+.headerPic {
+    width: 1000px;
+    height: 188px;
 }

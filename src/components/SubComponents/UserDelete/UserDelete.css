@@ -1,23 +1,61 @@
 .deletePanel {
-    width: 800px;
+    margin-top: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 1000px;
+    height: 500px;
 }
 
 .deleteForm {
-    border: 2px solid black;
     height: 200px;
-    width: 75%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    margin-top: 20px;
+    align-self: center;
+    justify-self: center;
+}
+
+.backgroundPic {
+    position: relative;
+    width: 900px;
+    height: 400px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 }
 
 .deleteButton {
-    width: 50%;
+    width: 300px;
+    background-color: #3B3C1B;
+    border: 2px solid #ADD010;
+    color: #ADD010;
+    border-radius: 32px;
+    font-family: "Finger Paint", serif;
+    font-size: 90%;
+}
+
+.backButton {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    width: 100px;
+    background-color: #3B3C1B;
+    border: 2px solid #ADD010;
+    color: #ADD010;
+    border-radius: 32px;
+    font-family: "Finger Paint", serif;
+    font-size: 90%;
+}
+
+.backButton:hover {
+    cursor: pointer;
+}
+
+.deleteButton:hover {
+    cursor: pointer;
 }
 
 #deleteTextBox {
@@ -25,3 +63,4 @@
     height: 10%;
     text-align: center;
 }
+
